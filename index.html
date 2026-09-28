@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TeluguFlix | Telugu Movies</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">TELUGU<span>FLIX</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#movies">Movies</a>
+            <a href="#trending">Trending</a>
+            <a href="#favorites">My List</a>
+        </nav>
+
+        <div class="nav-right">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search movies..."
+            >
+
+            <button id="searchButton">🔍</button>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">TELUGU MOVIE COLLECTION</p>
+
+            <h1>Watch Telugu<br>Movies</h1>
+
+            <p>
+                Explore popular Telugu movies, classics,
+                action, comedy, romance and drama.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="play-btn" onclick="playFeatured()">
+                    ▶ Play
+                </button>
+
+                <button class="info-btn" onclick="showFeaturedInfo()">
+                    ⓘ More Info
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MOVIES -->
+
+    <section id="movies" class="movie-section">
+
+        <div class="section-header">
+
+            <h2>Telugu Movies</h2>
+
+            <select id="genreFilter">
+
+                <option value="all">All Genres</option>
+                <option value="action">Action</option>
+                <option value="romance">Romance</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="movie-grid" id="movieGrid">
+
+            <!-- Movies added using JavaScript -->
+
+        </div>
+
+    </section>
+
+
+    <!-- TRENDING -->
+
+    <section id="trending" class="movie-section">
+
+        <h2>🔥 Trending Telugu Movies</h2>
+
+        <div class="trending-container">
+
+            <div class="trend-card">
+                <span>01</span>
+                <h3>Pushpa</h3>
+            </div>
+
+            <div class="trend-card">
+                <span>02</span>
+                <h3>RRR</h3>
+            </div>
+
+            <div class="trend-card">
+                <span>03</span>
+                <h3>Baahubali</h3>
+            </div>
+
+            <div class="trend-card">
+                <span>04</span>
+                <h3>Arjun Reddy</h3>
+            </div>
+
+            <div class="trend-card">
+                <span>05</span>
+                <h3>Jersey</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAVORITES -->
+
+    <section id="favorites" class="movie-section">
+
+        <h2>❤️ My List</h2>
+
+        <div
+            class="movie-grid"
+            id="favoriteGrid"
+        >
+
+            <p class="empty-message">
+                Your favorite movies will appear here.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MOVIE MODAL -->
+
+    <div
+        class="modal"
+        id="movieModal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeModal()"
+            >
+                ✕
+            </button>
+
+            <div id="modalPoster"></div>
+
+            <div class="modal-info">
+
+                <h2 id="modalTitle"></h2>
+
+                <p id="modalGenre"></p>
+
+                <p id="modalDescription"></p>
+
+                <button
+                    class="play-btn"
+                    onclick="watchMovie()"
+                >
+                    ▶ Play
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="logo">TELUGU<span>FLIX</span></div>
+
+        <p>
+            A Telugu movie catalog project created using
+            HTML, CSS and JavaScript.
+        </p>
+
+        <p>
+            © 2026 TeluguFlix
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

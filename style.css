@@ -1,0 +1,671 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111;
+    color: white;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    height: 70px;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #080808;
+
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+
+    font-size: 26px;
+
+    font-weight: 900;
+
+    color: #e50914;
+}
+
+.logo span {
+    color: white;
+}
+
+nav {
+
+    display: flex;
+
+    gap: 25px;
+}
+
+nav a {
+
+    color: #ddd;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+
+/* SEARCH */
+
+.nav-right {
+
+    display: flex;
+
+    align-items: center;
+}
+
+#searchInput {
+
+    width: 190px;
+
+    padding: 9px 12px;
+
+    background: #222;
+
+    border: 1px solid #444;
+
+    color: white;
+
+    outline: none;
+}
+
+#searchButton {
+
+    padding: 9px 12px;
+
+    border: none;
+
+    background: #e50914;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 75vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 70px 7%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #080808 10%,
+            rgba(8,8,8,0.85) 45%,
+            rgba(8,8,8,0.2)
+        ),
+
+        linear-gradient(
+            135deg,
+            #551111,
+            #171717 60%,
+            #222
+        );
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.small-title {
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+
+    font-size: clamp(45px, 7vw, 80px);
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+.hero-content > p:not(.small-title) {
+
+    color: #ccc;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* BUTTONS */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.play-btn,
+.info-btn {
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.play-btn {
+
+    background: white;
+
+    color: black;
+}
+
+.info-btn {
+
+    background: rgba(100,100,100,0.7);
+
+    color: white;
+}
+
+.play-btn:hover {
+    background: #ddd;
+}
+
+.info-btn:hover {
+    background: #555;
+}
+
+
+/* =========================
+   MOVIE SECTION
+========================= */
+
+.movie-section {
+
+    padding: 45px 5%;
+}
+
+.movie-section h2 {
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+}
+
+.section-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+#genreFilter {
+
+    background: #222;
+
+    color: white;
+
+    border: 1px solid #444;
+
+    padding: 9px 15px;
+}
+
+
+/* MOVIE GRID */
+
+.movie-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 18px;
+}
+
+
+/* MOVIE CARD */
+
+.movie-card {
+
+    background: #181818;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+.movie-card:hover {
+
+    transform: scale(1.05);
+
+    z-index: 5;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.6);
+}
+
+
+/* POSTER */
+
+.poster {
+
+    height: 280px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #222,
+            #3a0d0d
+        );
+}
+
+.poster h3 {
+
+    font-size: 22px;
+
+    text-shadow:
+        2px 2px 5px black;
+}
+
+
+/* CARD INFO */
+
+.movie-info {
+
+    padding: 13px;
+}
+
+.movie-info h3 {
+
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+.movie-info p {
+
+    color: #aaa;
+
+    font-size: 13px;
+}
+
+
+/* FAVORITE */
+
+.favorite-btn {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 10px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.75);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+.favorite-btn.active {
+
+    color: #e50914;
+}
+
+
+/* =========================
+   TRENDING
+========================= */
+
+.trending-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
+}
+
+.trend-card {
+
+    min-height: 180px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    background:
+        linear-gradient(
+            135deg,
+            #222,
+            #4b1111
+        );
+
+    border-radius: 5px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.trend-card span {
+
+    position: absolute;
+
+    top: 10px;
+
+    left: 15px;
+
+    font-size: 55px;
+
+    font-weight: bold;
+
+    color: rgba(255,255,255,0.15);
+}
+
+.trend-card h3 {
+
+    font-size: 20px;
+
+    position: relative;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    z-index: 2000;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.85);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.modal.show {
+
+    display: flex;
+}
+
+.modal-content {
+
+    width: 700px;
+
+    max-width: 100%;
+
+    background: #181818;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+#modalPoster {
+
+    height: 250px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4b1111,
+            #111
+        );
+}
+
+#modalPoster h2 {
+
+    font-size: 40px;
+
+    text-align: center;
+}
+
+.modal-info {
+
+    padding: 30px;
+}
+
+.modal-info h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+#modalGenre {
+
+    color: #aaa;
+
+    margin-bottom: 15px;
+}
+
+#modalDescription {
+
+    color: #ccc;
+
+    margin-bottom: 20px;
+}
+
+.close-btn {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    z-index: 5;
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: black;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: #080808;
+
+    color: #777;
+}
+
+footer .logo {
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .movie-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .trending-container {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    nav {
+        display: none;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+
+        height: auto;
+
+        padding: 15px;
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+    }
+
+    .nav-right {
+
+        width: 100%;
+    }
+
+    #searchInput {
+
+        width: 100%;
+    }
+
+    .hero {
+
+        min-height: 70vh;
+
+        padding: 50px 25px;
+    }
+
+    .movie-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .poster {
+
+        height: 220px;
+    }
+
+    .trending-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
